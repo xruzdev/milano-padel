@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Court {
+  id       Int       @id @default(autoincrement())
+  name     String
+  location String?
+  price    Float
+  specs    String[] // ej: ["pista de tenis", "iluminación nocturna"]
+  bookings Booking[]
+}
+
+model Booking {
+  id        Int      @id @default(autoincrement())
+  name      String // nombre del usuario que reserva
+  email     String // email del usuario que reserva
+  phone     String // teléfono del usuario que reserva
+  court     Court    @relation(fields: [courtId], references: [id])
+  courtId   Int
+  date      DateTime // solo la fecha
+  time      String // ej: "18:00"
+  createdAt DateTime @default(now())
+
+  @@unique([courtId, date, time]) // evita dobles reservas
+}
+
+enum Role {
+  USER
+  ADMIN
+}
