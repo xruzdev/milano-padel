@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Title } from "../common/Title";
 import { CTABtn } from "../common/CTABtn";
+import Carousel from "../common/Carousel";
 
 export const About = () => {
   return (
@@ -45,17 +46,18 @@ export const About = () => {
                 target="_blank"
                 title="Instagram"
                 className="mt-8 lg:mt-4 w-fit"
+                
               />
             </div>
           </div>
 
           <div className="w-full aspect-video relative mt-8 lg:mt-12">
-            <Image
-              src="/comunidad-2.jpg"
-              alt="Milano Padel Comunidad"
-              className="object-cover w-full h-full rounded"
-              fill
-            />
+           <Carousel
+           images={["/quinchob-1.jpg", "/quinchob-2.jpg","/comunidad-2.jpg"]}
+           rounded
+
+            interval={5500}
+           />
           </div>
         </div>
       </div>

@@ -6,10 +6,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Milano Pádel Club",
-  description: "Complejo ",
+  description:
+    "Complejo deportivo de pádel en Bahía Blanca,Buenos Aires, Argentina",
 };
-
-
 
 export default function RootLayout({
   children,
@@ -19,13 +18,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
+       style={{
+        overflow: "hidden"
+       }}
         className={`${inter.className}  antialiased   text-white min-h-screen flex flex-col items-center justify-start relative`}
       >
-        <Nav/>
-        <Lenis>
-          
-       
-          {children}</Lenis>
+        <Nav />
+        <Lenis>{children}</Lenis>
       </body>
     </html>
   );

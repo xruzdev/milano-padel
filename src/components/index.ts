@@ -1,8 +1,5 @@
-export * from "../../private/turnera/bookings-components/Turner";
-
 export * from "./common/Lenis";
 export * from "./common/Line";
-
 
 export * from "./sections/nav/Nav";
 export * from "./sections/Hero";

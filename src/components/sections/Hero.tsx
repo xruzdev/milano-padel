@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useAnimationsStore } from "@/store";
@@ -42,7 +43,7 @@ export const Hero = () => {
           setStartLenis(false); // Detiene Lenis al iniciar la animación
         },
         onComplete: () => {
-          setStartLenis(true); // Inicia Lenis al completar la animación
+          //setStartLenis(true); // Inicia Lenis al completar la animación
         },
       });
 
@@ -82,18 +83,19 @@ export const Hero = () => {
           [ball, line],
           {
             display: "none",
-          
+            delay: -0.8,
+           
           },
-          "<0.5" // empieza 0.5s después de la animación anterior
+          
         )  
         .to(
           [logo],
           {
             scale: 0,
             duration: 0.5,
+            delay: -0.5,
             ease: "power2.in",
-          },
-          "<1"
+          }, 
         ) // empieza 1.5s después de la animación anterior
         .to(bg, {
           opacity: 1,
@@ -101,6 +103,7 @@ export const Hero = () => {
           ease: "power2.out",
           onStart: () => {
             setStartNavAnimation(true); // Inicia la animación del nav
+            setStartLenis(true);
           },
         })
         .to(
@@ -149,26 +152,26 @@ export const Hero = () => {
       ref={containerRef}
       className="w-screen h-[95vh] md:h-screen  relative "
     >
-      {/* Loader */}
+      {/* Loader desktop */}
 
-      <div className="loader flex flex-col items-center justify-center absolute top-0 left-0 w-full h-full">
-        <Image
+      <div className="flex loader   flex-col items-center justify-center absolute top-0 left-0 w-full h-full">
+        
+        <img
           src="/loader-ball.png"
           alt="Hero Background"
-          width={150}
-          height={150}
-          className="ball absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[600%] z-20    "
+          
+          className="ball absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[700%] z-20  size-20 object-contain  md:size-24 lg:size-28"
         />
-        <Image
+        <img
           src="/logo.png"
           alt="Hero Background"
-          width={155}
-          height={155}
-          className="logo absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 "
+          
+          className="logo absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 opacity-0 size-22 object-contain md:size-26 lg:size-30 "
         />
 
         <div className="line absolute top-1/2 left-0 -translate-y-1/2 h-0.5 w-screen bg-white scale-x-0 z-0" />
       </div>
+     
 
       {/*Contenido Principal */}
 
@@ -176,13 +179,20 @@ export const Hero = () => {
         data-speed="-0.75"
         className="parallax size-full absolute top-0 left-0"
       >
-        <video
+       {/*  <video
           autoPlay
           loop
           muted
           src={"/milano-bg.mp4"}
           className="  bg object-cover size-full    brightness-50 absolute top-0 left-0  opacity-0"
-        />
+        /> */}
+
+         <Image
+              fill
+              src="/bg.jpg"
+              alt="Logo"
+              className="bg object-cover size-full    brightness-50 absolute top-0 left-0  opacity-0"
+            />
         <div className="  absolute -bottom-2 left-0 w-screen h-32 bg-gradient-to-t from-custom-dark to-transparent z-10 " />
       </div>
 

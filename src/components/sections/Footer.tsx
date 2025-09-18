@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import { LenisLink } from "../common/LenisLink";
 import { Marquee } from "../common/Marquee";
+import { ByXruzLogo } from "../common/by-xruz-logo/ByXruzLogo";
 
 export const Footer: React.FC = () => {
   return (
@@ -31,15 +32,13 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="flex flex-col lg:flex-row items-center lg:justify-evenly gap-10 w-full  ">
-         
-          <Image
-            className="object-cover mx-auto "
-            width={150}
-            height={150}
-            src={"/logo.png"}
-            alt="Logo"
-          />
-      
+        <Image
+          className="object-cover mx-auto "
+          width={150}
+          height={150}
+          src={"/logo.png"}
+          alt="Logo"
+        />
 
         <ul className=" flex flex-col lg:flex-row text-center lg:space-x-8 justify-evenly text-sm  font-medium   py-1  rounded  relative mx-auto ">
           {navLinks.map((link) => (
@@ -65,22 +64,10 @@ export const Footer: React.FC = () => {
       </div>
       <div className="w-5/6 text-center flex flex-col lg:flex-row items-center justify-center lg:justify-evenly gap-4 text-xs  ">
         <span>© {new Date().getFullYear()} Milano Pádel · Bahía Blanca</span>
+        <ByXruzLogo />
         <Link
           target="_blank"
-          href="https://www.xruzdev.com"
-          className="flex items-center gap-4"
-        >
-          <span>Code & Design by</span>{" "}
-          <Image
-            src="https://res.cloudinary.com/dqbpjov4y/image/upload/v1723761139/xruz-logo-v2-bn_n3in4o.png"
-            width={50}
-            height={50}
-            alt="Xruz Logo"
-          />
-        </Link>
-        <Link
-          target="_blank"
-          href="https://www.mktflex.com.ar"
+          href="https://www.flexmkt.com.ar"
           className="flex items-center gap-1"
         >
           <span>Multimedia by Flex Mkt Agency</span>{" "}

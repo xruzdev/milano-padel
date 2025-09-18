@@ -186,7 +186,7 @@ export const Instalaciones = () => {
               pin: true,
               anticipatePin: 1,
               snap: 1 / 4,
-              scrub: 1.5, // Suaviza el movimiento del pin
+              scrub: 2, // Suaviza el movimiento del pin
               animation: gsap.to(slider, {
                 y: -2000, // 560px * 5 can sliders - 560px 1 slider
                 ease: "none",
@@ -202,7 +202,7 @@ export const Instalaciones = () => {
               pin: true,
               anticipatePin: 1,
               snap: 1 / 4,
-              scrub: 1.5, // Suaviza el movimiento del pin
+              scrub: 2, // Suaviza el movimiento del pin
               animation: gsap.to(slider, {
                 y: -2800, // 560px * 5 can sliders - 560px 1 slider
                 ease: "none",
@@ -286,7 +286,7 @@ export const Instalaciones = () => {
                     src={`/instalaciones/${index + 1}.jpg`}
                     alt={`Instalación ${index + 1}`}
                     fill
-                    className="object-cover "
+                    className="object-cover object-left"
                   />
                 </div>
               ))}

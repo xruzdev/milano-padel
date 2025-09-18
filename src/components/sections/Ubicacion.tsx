@@ -18,7 +18,7 @@ export const Ubicacion = () => {
 
       <div className="max-w-7xl w-full aspect-[9/12] lg:aspect-video   relative">
         <Image
-          src="/outdoors.jpg"
+          src="/location.jpg"
           alt="Mapa de Milano Padel"
           className="object-cover object-left w-full h-full rounded absolute top-0 left-0 brightness-90 z-0"
           fill
