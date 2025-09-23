@@ -14,6 +14,7 @@ const logos = [
   "lager.png",
   "levite.png",
   "senior.png",
+  "la-virginia.png",
   "villavicencio.png",
 ];
 
@@ -84,7 +85,7 @@ export const Contacto = () => {
 
 
         <Line />
-      <Title section="Sponsors" className="px-4 max-w-7xl flex-1   ">
+      <Title section="Sponsors" className="px-4 md:px-10 max-w-7xl flex-1   ">
         Nuestros Sponsors
         <p
           className={"text-sm text-[#4e4e4e] mt-2 pr-8" + " " + inter.className}
@@ -94,7 +95,7 @@ export const Contacto = () => {
         </p>
       </Title>
 
-      <div className=" px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 w-full max-w-7xl ">
+      <div className=" md:px-10 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 w-full max-w-7xl ">
         {logos.map((logo) => (
           <div
           key={logo}
