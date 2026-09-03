@@ -1,10 +1,9 @@
 import { navLinks } from "@/data";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { LenisLink } from "../common/LenisLink";
+import { LogoFlex } from "../common/LogoFlex";
 import { Marquee } from "../common/Marquee";
-import { ByXruzLogo } from "../common/by-xruz-logo/ByXruzLogo";
 
 export const Footer: React.FC = () => {
   return (
@@ -64,20 +63,7 @@ export const Footer: React.FC = () => {
       </div>
       <div className="w-5/6 text-center flex flex-col lg:flex-row items-center justify-center lg:justify-evenly gap-4 text-xs  ">
         <span>© {new Date().getFullYear()} Milano Pádel · Bahía Blanca</span>
-        <ByXruzLogo />
-        <Link
-          target="_blank"
-          href="https://www.flexmkt.com.ar"
-          className="flex items-center gap-1"
-        >
-          <span>Multimedia by Flex Mkt Agency</span>{" "}
-          <Image
-            src="https://res.cloudinary.com/dqbpjov4y/image/upload/v1739909337/Logo_FLEX_sin_fondo_RGB_npunhf.png"
-            width={25}
-            height={25}
-            alt="Xruz Logo"
-          />
-        </Link>
+        <LogoFlex />
       </div>
     </footer>
   );

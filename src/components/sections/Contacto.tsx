@@ -13,8 +13,7 @@ const logos = [
   "heiniken.png",
   "lager.png",
   "levite.png",
-  "senior.png",
-  "la-virginia.png",
+  "senior.png", 
   "villavicencio.png",
 ];
 
